@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  *
  * @author RHsu
  */
-public class UseThisPanel extends javax.swing.JPanel implements ActionListener
+public class UseThisPanel extends javax.swing.JPanel
 {
 
 	/**
@@ -21,7 +21,17 @@ public class UseThisPanel extends javax.swing.JPanel implements ActionListener
 	public UseThisPanel()
 	{
 		initComponents();
-		jTextField1.addActionListener(this);
+		jTextField1.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent ae)
+			{
+				String text = jTextField1.getText();
+				jTextArea1.append(text + "\n");
+				jTextField1.selectAll();
+				jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+			}
+		});
 	}
 
 	/**
@@ -54,11 +64,6 @@ public class UseThisPanel extends javax.swing.JPanel implements ActionListener
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
 	static int ctr = 0;
-	@Override
-	public void actionPerformed(ActionEvent evt)
-	{
-		System.out.println(ctr++);
-		System.out.println(evt);
-	}
 }

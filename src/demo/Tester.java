@@ -28,20 +28,15 @@ public class Tester extends JPanel
 		frame.setVisible(true);
 	}
 	
-	public static void createAndShowGUI2()
-	{
-		JFrame frame = new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JPanel p = new Tester();
-		frame.add(p);
-		
-		frame.pack();
-		frame.setVisible(true);
-	}
-	
 	public static void main(String[] args) 
 	{
-		createAndShowGUI();
+        javax.swing.SwingUtilities.invokeLater(new Runnable() 
+		{
+			@Override
+            public void run() 
+			{
+                createAndShowGUI();
+            }
+        });
 	}
 }
