@@ -1,23 +1,20 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextArea;
 
 /**
  *
  * @author RHsu
  */
-public class BoardPanel extends javax.swing.JPanel
+public class TerminalPanel extends javax.swing.JPanel
 {
 
 	/**
 	 * Creates new form UseThisPanel
 	 */
-	public BoardPanel()
+	public TerminalPanel()
 	{
 		initComponents();
 		jTextField1.addActionListener(new ActionListener()
@@ -27,16 +24,21 @@ public class BoardPanel extends javax.swing.JPanel
 			{
 				String text = jTextField1.getText();
 				jTextArea1.append(text + "\n");
-				if(text.equalsIgnoreCase("clear"))
-				{
-					jTextArea1.setText("");
-				}
+				processInput(text, jTextArea1);
 				jTextField1.selectAll();
 				jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
 			}
 		});
 	}
 
+	public void processInput(String text, JTextArea textArea)
+	{
+		if(text.equalsIgnoreCase("clear"))
+		{
+			jTextArea1.setText("");
+		}
+	}
+	
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always

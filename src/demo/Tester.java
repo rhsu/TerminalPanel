@@ -10,7 +10,7 @@ public class Tester
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
-		JPanel p = new BoardPanel();
+		JPanel p = new TerminalPanel();
 		frame.add(p);
 
 		frame.pack();
