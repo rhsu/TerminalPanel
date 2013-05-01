@@ -2,26 +2,15 @@ package demo;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-/**
- *
- */
-public class Tester extends JPanel
-{
-	protected JTextField textField;
-	
-	public Tester()
-	{
-		textField = new JTextField(2000);
-	}
-	
+public class Tester
+{	
 	public static void createAndShowGUI()
 	{
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
-		JPanel p = new UseThisPanel();
+		JPanel p = new BoardPanel();
 		frame.add(p);
 
 		frame.pack();

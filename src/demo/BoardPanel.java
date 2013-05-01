@@ -11,14 +11,13 @@ import java.awt.event.ActionListener;
  *
  * @author RHsu
  */
-public class UseThisPanel extends javax.swing.JPanel
+public class BoardPanel extends javax.swing.JPanel
 {
 
 	/**
 	 * Creates new form UseThisPanel
 	 */
-	@SuppressWarnings("LeakingThisInConstructor")
-	public UseThisPanel()
+	public BoardPanel()
 	{
 		initComponents();
 		jTextField1.addActionListener(new ActionListener()
@@ -28,6 +27,10 @@ public class UseThisPanel extends javax.swing.JPanel
 			{
 				String text = jTextField1.getText();
 				jTextArea1.append(text + "\n");
+				if(text.equalsIgnoreCase("clear"))
+				{
+					jTextArea1.setText("");
+				}
 				jTextField1.selectAll();
 				jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
 			}
@@ -41,8 +44,7 @@ public class UseThisPanel extends javax.swing.JPanel
 	 */
 	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
