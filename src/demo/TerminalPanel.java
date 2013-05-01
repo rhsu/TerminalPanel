@@ -23,7 +23,6 @@ public class TerminalPanel extends javax.swing.JPanel
 			public void actionPerformed(ActionEvent ae)
 			{
 				String text = jTextField1.getText();
-				jTextArea1.append(text + "\n");
 				processInput(text, jTextArea1);
 				jTextField1.selectAll();
 				jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
@@ -35,7 +34,15 @@ public class TerminalPanel extends javax.swing.JPanel
 	{
 		if(text.equalsIgnoreCase("clear"))
 		{
-			jTextArea1.setText("");
+			textArea.setText("");
+		}
+		else if(text.equalsIgnoreCase("exit"))
+		{
+			System.exit(0);
+		}
+		else
+		{
+			jTextArea1.append(text + "\n");
 		}
 	}
 	
