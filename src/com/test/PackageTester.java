@@ -3,6 +3,9 @@ package com.test;
 import com.TerminalFrame;
 import com.TerminalPanel;
 
+/**
+ * Class to launch a default terminal.
+ */
 public class PackageTester
 {		
 	public static void main(String[] args) 

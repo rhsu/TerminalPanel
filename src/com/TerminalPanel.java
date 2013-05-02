@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
 
 /**
- *
+ *A terminal panel GUI. To best use this, extend this class and override the 
+ * process input method.
  */
 public class TerminalPanel extends javax.swing.JPanel
 {
@@ -22,9 +23,13 @@ public class TerminalPanel extends javax.swing.JPanel
 			public void actionPerformed(ActionEvent ae)
 			{
 				String input = textField.getText();
-				//textArea.setText(processBasicInput(input));
 				input = processBasicInput(input);
 				
+				if(input != null)
+				{
+					input = processInput(input);
+				}
+	
 				if(input != null)
 				{
 					textArea.append(input + "\n");
@@ -32,9 +37,6 @@ public class TerminalPanel extends javax.swing.JPanel
 				
 				textField.selectAll();
 				textArea.setCaretPosition(textArea.getDocument().getLength());
-				
-				//textField.selectAll();
-				//textArea.setCaretPosition(textArea.getDocument().getLength());
 			}
 		});
 	}
@@ -42,6 +44,7 @@ public class TerminalPanel extends javax.swing.JPanel
 	/**
 	 * Processes the command `clear` to clean the screen and `exit` to exit.
 	 * @param text the user input
+	 * @return null if an action occurs, otherwise returns the user's text
 	 */
 	private String processBasicInput(String text)
 	{
@@ -58,13 +61,14 @@ public class TerminalPanel extends javax.swing.JPanel
 	}
 	
 	/**
-	 * Override this method to provide other functionality to the JPanel
-	 * @param text the text to process
-	 * @param textArea access to the textArea 
+	 * Override this method to provide extensive functionality. By default, this 
+	 * method does nothing.
+	 * @param text
+	 * @return null if an action occurs, otherwise returns the user's text
 	 */
-	public void processInput(String text, JTextArea textArea)
+	public String processInput(String text)
 	{
-		
+		return text;
 	}
 	
 	/**
@@ -97,6 +101,4 @@ public class TerminalPanel extends javax.swing.JPanel
     private javax.swing.JTextArea textArea;
     private javax.swing.JTextField textField;
     // End of variables declaration//GEN-END:variables
-
-	static int ctr = 0;
 }
