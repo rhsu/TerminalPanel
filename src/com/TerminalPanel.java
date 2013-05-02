@@ -98,7 +98,7 @@ public class TerminalPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane scrollPane;
-    private javax.swing.JTextArea textArea;
-    private javax.swing.JTextField textField;
+    protected javax.swing.JTextArea textArea;
+    protected javax.swing.JTextField textField;
     // End of variables declaration//GEN-END:variables
 }
