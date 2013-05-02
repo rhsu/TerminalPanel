@@ -21,11 +21,20 @@ public class TerminalPanel extends javax.swing.JPanel
 			@Override
 			public void actionPerformed(ActionEvent ae)
 			{
-				String text = textField.getText();
-				processBasicInput(text, textArea);
-				processInput(text, textArea);
+				String input = textField.getText();
+				//textArea.setText(processBasicInput(input));
+				input = processBasicInput(input);
+				
+				if(input != null)
+				{
+					textArea.append(input + "\n");
+				}
+				
 				textField.selectAll();
 				textArea.setCaretPosition(textArea.getDocument().getLength());
+				
+				//textField.selectAll();
+				//textArea.setCaretPosition(textArea.getDocument().getLength());
 			}
 		});
 	}
@@ -33,22 +42,19 @@ public class TerminalPanel extends javax.swing.JPanel
 	/**
 	 * Processes the command `clear` to clean the screen and `exit` to exit.
 	 * @param text the user input
-	 * @param textArea not applicable
 	 */
-	private void processBasicInput(String text, JTextArea textArea)
+	private String processBasicInput(String text)
 	{
 		if(text.equalsIgnoreCase("clear"))
 		{
 			textArea.setText("");
+			return null;
 		}
 		else if(text.equalsIgnoreCase("exit"))
 		{
 			System.exit(0);
 		}
-		else
-		{
-			this.textArea.append(text + "\n");
-		}
+		return text;
 	}
 	
 	/**
