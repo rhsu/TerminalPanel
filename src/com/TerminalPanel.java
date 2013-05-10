@@ -2,7 +2,6 @@ package com;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JTextArea;
 
 /**
  *A terminal panel GUI. To best use this, extend this class and override the 
