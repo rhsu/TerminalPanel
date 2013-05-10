@@ -36,7 +36,7 @@ public class TerminalPanel2 extends TerminalPanel
 			@Override
             public void run() 
 			{
-				TerminalPanel p2 = new TerminalPanel();
+				TerminalPanel p2 = new TerminalPanel2();
 				TerminalFrame terminalFrame = new TerminalFrame(p2);
             }
         });
