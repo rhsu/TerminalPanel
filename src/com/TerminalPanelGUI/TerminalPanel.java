@@ -1,4 +1,4 @@
-package com;
+package com.TerminalPanelGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -77,8 +77,7 @@ public class TerminalPanel extends javax.swing.JPanel
 	 */
 	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         scrollPane = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();

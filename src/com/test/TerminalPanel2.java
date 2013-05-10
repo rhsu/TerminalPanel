@@ -5,8 +5,8 @@
 
 package com.test;
 
-import com.TerminalFrame;
-import com.TerminalPanel;
+import com.TerminalPanelGUI.TerminalFrame;
+import com.TerminalPanelGUI.TerminalPanel;
 
 /**
  *

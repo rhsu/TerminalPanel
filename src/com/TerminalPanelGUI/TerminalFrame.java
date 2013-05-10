@@ -1,4 +1,4 @@
-package com;
+package com.TerminalPanelGUI;
 
 import javax.swing.JFrame;
 
