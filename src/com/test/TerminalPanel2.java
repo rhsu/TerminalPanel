@@ -26,7 +26,7 @@ public class TerminalPanel2 extends TerminalPanel
 			System.out.println("Went into here");
 			textArea.append("this worked");
 		}
-		return null;
+		return s;
 	}
 	
 	public static void main(String[] args)
