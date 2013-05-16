@@ -26,14 +26,13 @@ public class TerminalPanel extends javax.swing.JPanel
 			@Override
 			public void actionPerformed(ActionEvent ae)
 			{	
-				switch(state)
+				String input = textField.getText();
+				
+				input = processBasicInput(input);
+				
+				if(input != null)
 				{
-					case 0:
-						State0();
-						break;
-					case 1:
-						State1();
-						break;
+					input = processInput(input);
 				}
 			}
 		});
@@ -112,6 +111,15 @@ public class TerminalPanel extends javax.swing.JPanel
 	 */
 	public String processInput(String text)
 	{
+		switch(state)
+		{
+			case 0:
+				State0();
+				break;
+			case 1:
+				State1();
+			break;
+		}
 		return text;
 	}
 	
