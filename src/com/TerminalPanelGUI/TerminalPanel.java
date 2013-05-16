@@ -25,8 +25,7 @@ public class TerminalPanel extends javax.swing.JPanel
 		{
 			@Override
 			public void actionPerformed(ActionEvent ae)
-			{
-				System.out.println("In action performed: state is " + state);
+			{	
 				switch(state)
 				{
 					case 0:
