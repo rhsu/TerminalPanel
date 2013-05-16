@@ -19,21 +19,22 @@ public class TerminalPanel extends javax.swing.JPanel
 		state = 0;
 		initComponents();
 		
-		textArea.setText("Enter a number: ");
+		textArea.setText("Enter a number: \n");
 		
 		textField.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent ae)
 			{
+				System.out.println("In action performed: state is " + state);
 				switch(state)
 				{
 					case 0:
 						State0();
+						break;
 					case 1:
 						State1();
-					default:
-						State2();
+						break;
 				}
 			}
 		});
@@ -47,7 +48,9 @@ public class TerminalPanel extends javax.swing.JPanel
 		{
 			dummy = Integer.parseInt(textField.getText());
 			state = 1;
-			//State1();
+			
+			//prompt for next state
+			textArea.append("Enter a smaller number: \n");
 		}
 		catch(NumberFormatException e)
 		{
@@ -58,29 +61,29 @@ public class TerminalPanel extends javax.swing.JPanel
 	
 	private void State1()
 	{
-		textArea.append("Enter a smaller number: \n");
 		try
 		{
+
 			if(Integer.parseInt(textField.getText()) < dummy)
 			{
 				state = 2;
-				//State2();
+				
+				//prompt for next state
+				textArea.append("done!");
 			}
 			else
 			{
 				state = 1;
-				//State1();
+				
+				//prompt for next state
+				textArea.append("Enter a smaller number: \n");
 			}
 		}
 		catch(NumberFormatException e)
 		{
 			textArea.append("Invalid entry. Try again \n");
+			state = 2;
 		}
-	}
-	
-	private void State2()
-	{
-		textArea.append("done!");
 	}
 	
 	/**
