@@ -9,37 +9,80 @@ import java.awt.event.ActionListener;
  */
 public class TerminalPanel extends javax.swing.JPanel
 {
-
+	private int state;
+	
 	/**
 	 * Creates a new Terminal Panel
 	 */
 	public TerminalPanel()
 	{
+		state = 0;
 		initComponents();
+		
+		textArea.setText("Enter a number: ");
+		
 		textField.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent ae)
 			{
-				String input = textField.getText();
-				input = processBasicInput(input);
-				
-				if(input != null)
+				switch(state)
 				{
-					input = processInput(input);
+					case 0:
+						State0();
+					case 1:
+						State1();
+					default:
+						State2();
 				}
-	
-				if(input != null)
-				{
-					textArea.append(input + "\n");
-				}
-				
-				textField.selectAll();
-				textArea.setCaretPosition(textArea.getDocument().getLength());
 			}
 		});
 	}
 
+	private int dummy;
+	
+	private void State0()
+	{
+		try
+		{
+			dummy = Integer.parseInt(textField.getText());
+			state = 1;
+			//State1();
+		}
+		catch(NumberFormatException e)
+		{
+			textArea.append("Invalid entry. Try again \n");
+			state = 0;
+		}
+	}
+	
+	private void State1()
+	{
+		textArea.append("Enter a smaller number: \n");
+		try
+		{
+			if(Integer.parseInt(textField.getText()) < dummy)
+			{
+				state = 2;
+				//State2();
+			}
+			else
+			{
+				state = 1;
+				//State1();
+			}
+		}
+		catch(NumberFormatException e)
+		{
+			textArea.append("Invalid entry. Try again \n");
+		}
+	}
+	
+	private void State2()
+	{
+		textArea.append("done!");
+	}
+	
 	/**
 	 * Processes the command `clear` to clean the screen and `exit` to exit.
 	 * @param text the user input
