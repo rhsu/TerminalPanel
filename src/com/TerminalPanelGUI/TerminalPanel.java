@@ -34,6 +34,14 @@ public class TerminalPanel extends javax.swing.JPanel
 				{
 					input = processInput(input);
 				}
+				
+				if(input != null)
+				{
+					textArea.append(input + "\n");
+				}
+				
+				textField.selectAll();
+				textArea.setCaretPosition(textArea.getDocument().getLength());
 			}
 		});
 	}
