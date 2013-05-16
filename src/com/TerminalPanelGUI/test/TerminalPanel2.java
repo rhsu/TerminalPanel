@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package com.test;
+package com.terminalPanelGUI.test;
 
 import com.terminalPanelGUI.TerminalFrame;
 import com.terminalPanelGUI.TerminalPanel;

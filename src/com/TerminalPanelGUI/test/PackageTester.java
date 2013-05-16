@@ -1,4 +1,4 @@
-package com.test;
+package com.terminalPanelGUI.test;
 
 import com.terminalPanelGUI.TerminalFrame;
 
