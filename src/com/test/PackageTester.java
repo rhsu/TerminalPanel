@@ -1,6 +1,6 @@
 package com.test;
 
-import com.TerminalPanelGUI.TerminalFrame;
+import com.terminalPanelGUI.TerminalFrame;
 
 /**
  * Class to launch a default terminal.
