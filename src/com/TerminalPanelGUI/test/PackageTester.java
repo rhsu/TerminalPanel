@@ -1,7 +1,7 @@
 package com.terminalPanelGUI.test;
 
 import com.terminalPanelGUI.TerminalFrame;
-import com.terminalPanelGUI.TerminalPanel;
+import com.terminalPanelGUI.example.TerminalPanel;
 
 /**
  * Class to launch a default terminal.

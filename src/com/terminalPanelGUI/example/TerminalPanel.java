@@ -1,4 +1,6 @@
-package com.terminalPanelGUI;
+package com.terminalPanelGUI.example;
+
+import com.terminalPanelGUI.AbstractTerminal;
 
 /**
  *
