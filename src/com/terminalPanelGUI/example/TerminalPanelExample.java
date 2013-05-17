@@ -5,6 +5,7 @@
 package com.terminalPanelGUI.example;
 
 import com.terminalPanelGUI.AbstractTerminal;
+import com.terminalPanelGUI.UniversalPanelLauncher;
 
 /**
  *
@@ -30,7 +31,7 @@ public class TerminalPanelExample extends AbstractTerminal
 				State1();
 			break;
 		}
-		return text + "\n";
+		return null;
 	}
 	
 	private int dummy;
@@ -42,11 +43,17 @@ public class TerminalPanelExample extends AbstractTerminal
 			dummy = Integer.parseInt(textField.getText());
 			state = 1;
 			
+			//output user input
+			textArea.append(textField.getText() + "\n");
+			
 			//prompt for next state
 			textArea.append("Enter a smaller number: \n");
 		}
 		catch(NumberFormatException e)
 		{
+			//output user input
+			textArea.append(textField.getText() + "\n");
+			
 			textArea.append("Invalid entry. Try again \n");
 			state = 0;
 		}
@@ -61,6 +68,9 @@ public class TerminalPanelExample extends AbstractTerminal
 			{
 				state = 2;
 				
+				//output user input
+				textArea.append(textField.getText() + "\n");
+				
 				//prompt for next state
 				textArea.append("done!");
 			}
@@ -68,14 +78,25 @@ public class TerminalPanelExample extends AbstractTerminal
 			{
 				state = 1;
 				
+				//output user input
+				textArea.append(textField.getText() + "\n");
+				
 				//prompt for next state
 				textArea.append("Enter a smaller number: \n");
 			}
 		}
 		catch(NumberFormatException e)
 		{
+			//output user input
+			textArea.append(textField.getText() + "\n");
+			
 			textArea.append("Invalid entry. Try again \n");
 			state = 2;
 		}
+	}
+	
+	public static void main(String[] args)
+	{
+		UniversalPanelLauncher.Launch(new TerminalPanelExample());
 	}
 }
