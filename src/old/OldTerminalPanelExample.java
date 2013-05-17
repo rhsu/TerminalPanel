@@ -1,5 +1,6 @@
 package old;
 
+import com.terminalPanelGUI.UniversalPanelLauncher;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -160,4 +161,9 @@ public class OldTerminalPanelExample extends javax.swing.JPanel
     protected javax.swing.JTextArea textArea;
     protected javax.swing.JTextField textField;
     // End of variables declaration//GEN-END:variables
+
+	public static void main(String[] args)
+	{
+		UniversalPanelLauncher.Launch(new OldTerminalPanelExample());
+	}
 }

@@ -1,22 +1,22 @@
 package com.terminalPanelGUI;
 
-import com.terminalPanelGUI.example.TerminalPanelExample;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author rhsu
  */
 public class UniversalPanelLauncher
-{		
-	public static void main(String[] args)
-	{				
+{
+	public static void Launch(final JPanel panel)
+	{
 		javax.swing.SwingUtilities.invokeLater(new Runnable() 
 		{
 			@Override
             public void run() 
 			{
-				JFrame myFrame = new UniversalFrame(new TerminalPanelExample());
+				JFrame myFrame = new UniversalFrame(panel);
             }
         });
 	}
