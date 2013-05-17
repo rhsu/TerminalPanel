@@ -2,6 +2,7 @@ package com.terminalPanelGUI.test;
 
 import com.terminalPanelGUI.TerminalFrame;
 import com.terminalPanelGUI.example.TerminalPanel;
+import com.terminalPanelGUI.example.TerminalPanelExample;
 
 /**
  * Class to launch a default terminal.
@@ -15,7 +16,7 @@ public class PackageTester
 			@Override
             public void run() 
 			{
-				TerminalFrame terminalFrame = new TerminalFrame(new TerminalPanel());
+				TerminalFrame terminalFrame = new TerminalFrame(new TerminalPanelExample());
             }
         });
 	}
