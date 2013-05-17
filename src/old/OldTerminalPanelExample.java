@@ -1,4 +1,4 @@
-package com.terminalPanelGUI.example;
+package old;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
  *A terminal panel GUI. To best use this, extend this class and override the 
  * process input method.
  */
-public class TerminalPanelExampleOLD extends javax.swing.JPanel
+public class OldTerminalPanelExample extends javax.swing.JPanel
 {
 	private int state;
 	
 	/**
 	 * Creates a new Terminal Panel
 	 */
-	public TerminalPanelExampleOLD()
+	public OldTerminalPanelExample()
 	{
 		state = 0;
 		initComponents();
