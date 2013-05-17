@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
  *A terminal panel GUI. To best use this, extend this class and override the 
  * process input method.
  */
-public class TerminalPanelExample extends javax.swing.JPanel
+public class TerminalPanelExampleOLD extends javax.swing.JPanel
 {
 	private int state;
 	
 	/**
 	 * Creates a new Terminal Panel
 	 */
-	public TerminalPanelExample()
+	public TerminalPanelExampleOLD()
 	{
 		state = 0;
 		initComponents();

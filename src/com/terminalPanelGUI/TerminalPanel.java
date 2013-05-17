@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  */
 public class TerminalPanel extends javax.swing.JPanel
 {
-	private int state;
+	protected int state;
 	
 	/**
 	 * Creates a new Terminal Panel
@@ -18,9 +18,7 @@ public class TerminalPanel extends javax.swing.JPanel
 	{
 		state = 0;
 		initComponents();
-		
-		textArea.setText("Enter a number: \n");
-		
+				
 		textField.addActionListener(new ActionListener()
 		{
 			@Override
@@ -45,57 +43,11 @@ public class TerminalPanel extends javax.swing.JPanel
 			}
 		});
 	}
-
-	private int dummy;
-	
-	private void State0()
-	{
-		try
-		{
-			dummy = Integer.parseInt(textField.getText());
-			state = 1;
-			
-			//prompt for next state
-			textArea.append("Enter a smaller number: \n");
-		}
-		catch(NumberFormatException e)
-		{
-			textArea.append("Invalid entry. Try again \n");
-			state = 0;
-		}
-	}
-	
-	private void State1()
-	{
-		try
-		{
-
-			if(Integer.parseInt(textField.getText()) < dummy)
-			{
-				state = 2;
-				
-				//prompt for next state
-				textArea.append("done!");
-			}
-			else
-			{
-				state = 1;
-				
-				//prompt for next state
-				textArea.append("Enter a smaller number: \n");
-			}
-		}
-		catch(NumberFormatException e)
-		{
-			textArea.append("Invalid entry. Try again \n");
-			state = 2;
-		}
-	}
-	
+		
 	/**
 	 * Processes the command `clear` to clean the screen and `exit` to exit.
 	 * @param text the user input
-	 * @return null if an action occurs, otherwise returns the user's text
+	 * @return null if the user's text should not be displayed, otherwise returns the user's text
 	 */
 	private String processBasicInput(String text)
 	{
@@ -115,19 +67,10 @@ public class TerminalPanel extends javax.swing.JPanel
 	 * Override this method to provide extensive functionality. By default, this 
 	 * method does nothing.
 	 * @param text
-	 * @return null if an action occurs, otherwise returns the user's text
+	 * @return null if the user's text should not be displayed, otherwise returns the user's text
 	 */
 	public String processInput(String text)
 	{
-		switch(state)
-		{
-			case 0:
-				State0();
-				break;
-			case 1:
-				State1();
-			break;
-		}
 		return text;
 	}
 	
