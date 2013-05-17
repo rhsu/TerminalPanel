@@ -11,7 +11,7 @@ public class TerminalFrame extends JFrame
 	 * Constructs a TerminalFrame object
 	 * @param p The terminal panel to add to the frame
 	 */
-	public TerminalFrame(TerminalPanel p)
+	public TerminalFrame(AbstractTerminal p)
 	{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.add(p);
