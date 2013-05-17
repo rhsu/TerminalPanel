@@ -49,7 +49,7 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 	 * @param text the user input
 	 * @return null if the user's text should not be displayed, otherwise returns the user's text
 	 */
-	private String processBasicInput(String text)
+	protected String processBasicInput(String text)
 	{
 		if(text.equalsIgnoreCase("clear"))
 		{
@@ -69,7 +69,7 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 	 * @param text
 	 * @return null if the user's text should not be displayed, otherwise returns the user's text
 	 */
-	public String processInput(String text)
+	protected String processInput(String text)
 	{
 		return text;
 	}
