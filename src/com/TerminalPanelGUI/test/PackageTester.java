@@ -1,7 +1,6 @@
 package com.terminalPanelGUI.test;
 
 import com.terminalPanelGUI.TerminalFrame;
-import com.terminalPanelGUI.TerminalPanel;
 import com.terminalPanelGUI.TerminalPanel2;
 
 /**

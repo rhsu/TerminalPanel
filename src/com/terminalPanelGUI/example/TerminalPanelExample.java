@@ -4,13 +4,13 @@
  */
 package com.terminalPanelGUI.example;
 
-import com.terminalPanelGUI.TerminalPanel;
+import com.terminalPanelGUI.AbstractTerminal;
 
 /**
  *
  * @author rhsu
  */
-public class TerminalPanelExample extends TerminalPanel
+public class TerminalPanelExample extends AbstractTerminal
 {
 	
 }
