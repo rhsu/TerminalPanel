@@ -56,11 +56,17 @@ public class OldTerminalPanelExample extends javax.swing.JPanel
 			dummy = Integer.parseInt(textField.getText());
 			state = 1;
 			
+			//output user input
+			textArea.append(textField.getText() + "\n");
+			
 			//prompt for next state
 			textArea.append("Enter a smaller number: \n");
 		}
 		catch(NumberFormatException e)
 		{
+			//output user input
+			textArea.append(textField.getText());
+			
 			textArea.append("Invalid entry. Try again \n");
 			state = 0;
 		}
@@ -75,12 +81,18 @@ public class OldTerminalPanelExample extends javax.swing.JPanel
 			{
 				state = 2;
 				
+				//output user input
+				textArea.append(textField.getText() + "\n");
+				
 				//prompt for next state
 				textArea.append("done!");
 			}
 			else
 			{
 				state = 1;
+				
+				//output user input
+				textArea.append(textField.getText() + "\n");
 				
 				//prompt for next state
 				textArea.append("Enter a smaller number: \n");
@@ -129,7 +141,7 @@ public class OldTerminalPanelExample extends javax.swing.JPanel
 				State1();
 			break;
 		}
-		return text;
+		return null;
 	}
 	
 	/**
