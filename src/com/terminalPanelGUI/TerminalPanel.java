@@ -4,9 +4,9 @@ package com.terminalPanelGUI;
  *
  * @author rhsu
  */
-public class TerminalPanel2 extends AbstractTerminal
+public class TerminalPanel extends AbstractTerminal
 {
-	public TerminalPanel2()
+	public TerminalPanel()
 	{
 		super();
 	}
