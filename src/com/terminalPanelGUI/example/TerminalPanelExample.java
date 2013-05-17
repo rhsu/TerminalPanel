@@ -17,6 +17,8 @@ public class TerminalPanelExample extends AbstractTerminal
 	{		
 		super();
 		dummy = 0;
+		
+		textArea.append("Enter a number: \n");
 	}
 	
 	@Override
@@ -29,7 +31,10 @@ public class TerminalPanelExample extends AbstractTerminal
 				break;
 			case 1:
 				State1();
-			break;
+				break;
+			case 2:
+				State2();
+				return (text.equalsIgnoreCase("reset") ? null : text);
 		}
 		return null;
 	}
@@ -72,7 +77,7 @@ public class TerminalPanelExample extends AbstractTerminal
 				textArea.append(textField.getText() + "\n");
 				
 				//prompt for next state
-				textArea.append("done!");
+				textArea.append("done!" + "\n");
 			}
 			else
 			{
@@ -91,6 +96,19 @@ public class TerminalPanelExample extends AbstractTerminal
 			textArea.append(textField.getText() + "\n");
 			
 			textArea.append("Invalid entry. Try again \n");
+			state = 2;
+		}
+	}
+	
+	private void State2()
+	{
+		if(textField.getText().equalsIgnoreCase("reset"))
+		{
+			state = 0;
+			textArea.append("Enter a number: \n");
+		}
+		else
+		{
 			state = 2;
 		}
 	}
