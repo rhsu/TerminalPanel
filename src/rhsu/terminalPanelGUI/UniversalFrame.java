@@ -1,4 +1,4 @@
-package com.terminalPanelGUI;
+package rhsu.terminalPanelGUI;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

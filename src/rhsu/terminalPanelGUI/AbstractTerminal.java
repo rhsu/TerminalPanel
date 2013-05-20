@@ -1,4 +1,4 @@
-package com.terminalPanelGUI;
+package rhsu.terminalPanelGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

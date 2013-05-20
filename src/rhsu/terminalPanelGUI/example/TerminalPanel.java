@@ -1,7 +1,7 @@
-package com.terminalPanelGUI.example;
+package rhsu.terminalPanelGUI.example;
 
-import com.terminalPanelGUI.AbstractTerminal;
-import com.terminalPanelGUI.UniversalPanelLauncher;
+import rhsu.terminalPanelGUI.AbstractTerminal;
+import rhsu.terminalPanelGUI.UniversalPanelLauncher;
 
 /**
  *
