@@ -9,15 +9,28 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
- *
- * @author rhsu
+ * A frame, which can hold any JPanel.
+ * Also includes a jMenuBar with a Menu (along with its items).
  */
 public class UniversalFrame extends JFrame
 {
+	/**
+	 * The menu bar
+	 */
 	private JMenuBar jMenuBar;
+	/**
+	 * The file menu
+	 */
 	private JMenu fileMenu;
+	/**
+	 * An array of menu items
+	 */
 	private JMenuItem[] menuItems;
 	
+	/**
+	 * Constructs a Universal Frame
+	 * @param panel the panel to attach to the Frame
+	 */
 	public UniversalFrame(JPanel panel)
 	{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,6 +40,9 @@ public class UniversalFrame extends JFrame
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Initializes the menu items
+	 */
 	private void initMenu()
 	{
 		jMenuBar = new JMenuBar();

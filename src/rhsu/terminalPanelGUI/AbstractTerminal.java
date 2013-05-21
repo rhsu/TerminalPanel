@@ -9,10 +9,16 @@ import java.awt.event.ActionListener;
  */
 public abstract class AbstractTerminal extends javax.swing.JPanel
 {
+	/**
+	 * The Abstract Terminal utilizes a state-machine like design pattern.
+	 * Initially, this variable is set to 0.
+	 * The state variable is used to progress the prompt.
+	 * For more information, see the wiki.
+	 */
 	protected int state;
 	
 	/**
-	 * Creates a new Terminal Panel
+	 * Creates a new AbstractTerminal
 	 */
 	public AbstractTerminal()
 	{

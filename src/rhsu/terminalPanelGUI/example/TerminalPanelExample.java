@@ -1,18 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package rhsu.terminalPanelGUI.example;
 
 import rhsu.terminalPanelGUI.AbstractTerminal;
 import rhsu.terminalPanelGUI.UniversalPanelLauncher;
 
 /**
- *
- * @author rhsu
+ *An example game that demonstrates example usage of the state machine design.
+ * 
+ *The game prompts the user to enter a number. Then input a smaller input.
+ * Error checking is included.
  */
 public class TerminalPanelExample extends AbstractTerminal
 {
+	/**
+	 * Constructor
+	 */
 	public TerminalPanelExample()
 	{		
 		super();
@@ -21,6 +22,11 @@ public class TerminalPanelExample extends AbstractTerminal
 		textArea.append("Enter a number: \n");
 	}
 	
+	/**
+	 * This function is overriden to allow manipulation of states
+	 * @param text the text the user provides
+	 * @return null if there is nothing to echo.
+	 */
 	@Override
 	protected String processInput(String text)
 	{
@@ -39,8 +45,17 @@ public class TerminalPanelExample extends AbstractTerminal
 		return null;
 	}
 	
+	/**
+	 * A dummy variable to hold the user's input
+	 */
 	private int dummy;
 	
+	/**
+	 * The first state.
+	 * 
+	 * attempts to read in the user entered data.
+	 * Transitions to State1() if successful
+	 */
 	private void State0()
 	{
 		try
@@ -64,6 +79,13 @@ public class TerminalPanelExample extends AbstractTerminal
 		}
 	}
 	
+	/**
+	 * The second state
+	 * 
+	 * Processes the smaller number
+	 * 
+	 * Transitions to state2 if successful.
+	 */
 	private void State1()
 	{
 		try
@@ -100,6 +122,10 @@ public class TerminalPanelExample extends AbstractTerminal
 		}
 	}
 	
+	/**
+	 * The final state.
+	 * Allows the processing of reset.
+	 */
 	private void State2()
 	{
 		if(textField.getText().equalsIgnoreCase("reset"))
@@ -113,6 +139,10 @@ public class TerminalPanelExample extends AbstractTerminal
 		}
 	}
 	
+	/**
+	 * Main method
+	 * @param args args 
+	 */
 	public static void main(String[] args)
 	{
 		UniversalPanelLauncher.Launch(new TerminalPanelExample());
