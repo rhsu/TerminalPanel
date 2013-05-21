@@ -1,5 +1,7 @@
 package rhsu.terminalPanelGUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -44,9 +46,18 @@ public class UniversalFrame extends JFrame
 		menuItems[2].setText("Save");
 		menuItems[3].setText("Close");
 
+		menuItems[3].addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent evt) 
+			{
+				System.exit(0);
+			}
+		});
+		
 		//set the text of fileMenu
 		fileMenu.setText("File");
-	
+			
         jMenuBar.add(fileMenu);
 		setJMenuBar(jMenuBar);
 	}
