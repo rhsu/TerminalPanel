@@ -47,7 +47,7 @@ public class UniversalFrame extends JFrame
 	{
 		jMenuBar = new JMenuBar();
 		fileMenu = new JMenu();
-		menuItems = new JMenuItem[4];
+		menuItems = new JMenuItem[5];
 		
 		//initialize JMenuItems and add to file menu
 		for(int i = 0; i < menuItems.length; i++)
@@ -60,9 +60,10 @@ public class UniversalFrame extends JFrame
 		menuItems[0].setText("New");
 		menuItems[1].setText("Open");
 		menuItems[2].setText("Save");
-		menuItems[3].setText("Close");
+		menuItems[3].setText("Options");
+		menuItems[4].setText("Close");
 
-		menuItems[3].addActionListener(new ActionListener()
+		menuItems[4].addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent evt) 
@@ -70,7 +71,7 @@ public class UniversalFrame extends JFrame
 				System.exit(0);
 			}
 		});
-		
+	
 		//set the text of fileMenu
 		fileMenu.setText("File");
 			
