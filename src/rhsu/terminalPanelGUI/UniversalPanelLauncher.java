@@ -1,6 +1,5 @@
 package rhsu.terminalPanelGUI;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -19,7 +18,7 @@ public class UniversalPanelLauncher
 			@Override
             public void run() 
 			{
-				JFrame myFrame = new UniversalFrame(panel);
+				new UniversalFrame(panel).setVisible(true);
             }
         });
 	}

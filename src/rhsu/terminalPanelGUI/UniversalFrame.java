@@ -37,7 +37,6 @@ public class UniversalFrame extends JFrame
 		this.initMenu();
 		this.add(panel);
 		this.pack();
-		this.setVisible(true);
 	}
 	
 	/**
