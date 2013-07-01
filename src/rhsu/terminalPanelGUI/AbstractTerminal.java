@@ -16,6 +16,7 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 	 * For more information, see the wiki.
 	 */
 	protected int state;
+	protected StringBuilder saveString;
 	
 	/**
 	 * Creates a new AbstractTerminal
@@ -23,6 +24,8 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 	public AbstractTerminal()
 	{
 		state = 0;
+		saveString = new StringBuilder();
+		
 		initComponents();
 				
 		textField.addActionListener(new ActionListener()
@@ -31,6 +34,8 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 			public void actionPerformed(ActionEvent ae)
 			{	
 				String input = textField.getText();
+				
+				saveString.append(input).append("\n");
 				
 				input = processBasicInput(input);
 				
@@ -64,6 +69,7 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 		}
 		else if(text.equalsIgnoreCase("exit"))
 		{
+			System.out.println(saveString);
 			System.exit(0);
 		}
 		return text;
