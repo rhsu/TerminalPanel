@@ -2,6 +2,8 @@ package rhsu.terminalPanelGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 /**
  *A terminal panel GUI. To best use this, extend this class and override the 
@@ -70,6 +72,7 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 		else if(text.equalsIgnoreCase("exit"))
 		{
 			System.out.println(saveString);
+			createSaveFile();
 			System.exit(0);
 		}
 		return text;
@@ -84,6 +87,20 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 	protected String processInput(String text)
 	{
 		return text;
+	}
+	
+	protected void createSaveFile()
+	{
+		try
+		{
+			BufferedWriter out = new BufferedWriter(new FileWriter("out.txt"));
+			out.write(saveString.toString());
+			out.close();
+		}
+		catch(Exception e)
+		{
+			System.err.println("Error: " + e.getMessage());
+		}
 	}
 	
 	/**
