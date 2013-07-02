@@ -89,6 +89,9 @@ public abstract class AbstractTerminal extends javax.swing.JPanel
 		return text;
 	}
 	
+	/**
+	 * Creates a text file called out.txt
+	 */
 	protected void createSaveFile()
 	{
 		try

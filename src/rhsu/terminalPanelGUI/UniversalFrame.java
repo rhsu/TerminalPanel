@@ -61,6 +61,17 @@ public class UniversalFrame extends JFrame
 		menuItems[2].setText("Save");
 		menuItems[3].setText("Close");
 
+		//add the action listeners
+		menuItems[2].addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent evt)
+			{
+				
+			}
+		});
+		
+		
 		menuItems[3].addActionListener(new ActionListener()
 		{
 			@Override
