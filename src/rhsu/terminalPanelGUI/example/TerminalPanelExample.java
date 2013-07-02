@@ -23,7 +23,7 @@ public class TerminalPanelExample extends AbstractTerminal
 	}
 	
 	/**
-	 * This function is overriden to allow manipulation of states
+	 * This function is override to allow manipulation of states
 	 * @param text the text the user provides
 	 * @return null if there is nothing to echo.
 	 */
@@ -141,7 +141,7 @@ public class TerminalPanelExample extends AbstractTerminal
 	
 	/**
 	 * Main method
-	 * @param args args 
+	 * @param args arguments
 	 */
 	public static void main(String[] args)
 	{
